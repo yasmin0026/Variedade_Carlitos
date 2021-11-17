@@ -13,8 +13,14 @@
   <div class="row">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="<?php echo base_url(); ?>InventarioController/inicio">Productos</a>
+        <a class="nav-link " href="<?php echo base_url(); ?>InventarioController/inicio">Ropa</a>
       </li>
+      <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>InventarioController/accesorios">Accesorio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="<?php echo base_url(); ?>InventarioController/pantalon">Pantalón</a>
+        </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(); ?>InventarioController/index">Inventario</a>
       </li>
@@ -70,5 +76,5 @@
 <?php } ?>
 </main>
  
-<?php echo md5("Este es my Encryptasion pArá el Karro") ?>
+
 

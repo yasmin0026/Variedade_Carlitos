@@ -11,7 +11,7 @@
 						Nuevo Producto <i class="fa fa-truck" aria-hidden="true"></i>
 					</a>
 				<?php else : ?>
-					<a class="btn btn-warning " href="<?= base_url() . 'ProductosController/vistaAddProducto'; ?>">
+					<a class="btn btn-warning crear disabled" href="<?= base_url() . 'ProductosController/vistaAddProducto'; ?>">
 						Nuevo Producto <i class="fa fa-truck" aria-hidden="true"></i>
 					</a>
 				<?php endif; ?>

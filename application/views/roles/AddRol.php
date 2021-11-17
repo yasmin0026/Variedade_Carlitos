@@ -2,6 +2,9 @@
 if (isset($update)) {
     $id = '<input type="hidden" name="id_rol" value="' . $this->uri->segment(3) . '">';
     $nombre = $update->NOMBRE_ROL;
+    $crear = $update->CREAR;
+	$actualizar = $update->ACTUALIZAR;
+	$eliminar = $update->ELIMINAR;
 
 	$titulo = "Actualizando Rol";
     $boton = "Actualizar Rol";    
@@ -13,10 +16,13 @@ if (isset($update)) {
 	$titulo = "Agregar Rol";
     $boton = "Agregar Rol";
     $accion = "insert_rol";
+    $crear = "";
+	$actualizar = "";
+	$eliminar = "";
 }
 ?>
 <body >
-	
+	 
 
 <section class="home-section" style="margin: 60px;">
 <link rel="stylesheet" type="text/css" href="<?=base_url().'assets/css/button_style.css';?>">
@@ -33,6 +39,74 @@ if (isset($update)) {
 			    <label class="form-label">Rol de usuario</label>
 			    <input type="text" class="form-control" name="nombre_rol" style="width: 90%;" value="<?= $nombre; ?>" required>
 			  </div>
+ 
+			  <div class="col-md-12">
+								<label>¿Puede crear registros?</label>
+								<select name="crear" class="form-control">
+									<?php if ($accion == "update_rol"): ?>
+										<?php if ($crear == "Si"): ?>
+											<option>Seleccionar</option>
+											<option value="Si" selected>Si</option>
+											<option value="No">No</option>
+										<?php else: ?>
+											<option>Seleccionar</option>
+											<option value="Si">Si</option>
+											<option value="No" selected>No</option>
+										<?php endif ?>
+									<?php else: ?>
+										<option>Seleccionar</option>
+										<option value="Si">Si</option>
+										<option value="No">No</option>
+									<?php endif ?>
+
+								</select>
+							</div>
+
+							<div class="col-md-12">
+								<label>¿Puede editar registros?</label>
+								<select name="actualizar" class="form-control">
+									<?php if ($accion == "update_rol"): ?>
+										<?php if ($actualizar == "Si"): ?>
+											<option>Seleccionar</option>
+											<option value="Si" selected>Si</option>
+											<option value="No">No</option>
+										<?php else: ?>
+											<option>Seleccionar</option>
+											<option value="Si">Si</option>
+											<option value="No" selected>No</option>
+										<?php endif ?>
+									<?php else: ?>
+										<option>Seleccionar</option>
+										<option value="Si">Si</option>
+										<option value="No">No</option>
+									<?php endif ?>
+
+								</select>
+							</div>
+
+							<div class="col-md-12">
+								<label>¿Puede eliminar registros?</label>
+								<select name="eliminar" class="form-control">
+									<?php if ($accion == "update_rol"): ?>
+										<?php if ($eliminar == "Si"): ?>
+											<option>Seleccionar</option>
+											<option value="Si" selected>Si</option>
+											<option value="No">No</option>
+										<?php else: ?>
+											<option>Seleccionar</option>
+											<option value="Si">Si</option>
+											<option value="No" selected>No</option>
+										<?php endif ?>
+									<?php else: ?>
+										<option>Seleccionar</option>
+										<option value="Si">Si</option>
+										<option value="No">No</option>
+									<?php endif ?>
+
+								</select>
+							</div>
+
+
 
 			  <div class="col-xs-6 col-md-12">
 			    <button class="custom-btn btn-7"><span><?php echo $boton ?></span></button>
